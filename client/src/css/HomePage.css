@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=Open+Sans:ital,wght@1,300&family=Square+Peg&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img.logoHome {
+  width: 80px;
+  margin-left: 810px;
+  margin-top: 10px;
+}
+
+p.Line1 {
+  margin-left: 670px;
+  margin-top: 25px;
+}
+
+p.Line2 {
+  margin-left: 600px;
+  margin-top: 25px;
+}
+
+p.Line3 {
+  margin-left: 610px;
+  margin-top: 25px;
+}
+
+p.Line4 {
+  margin-left: 805px;
+  margin-top: 25px;
+}
+
+img.pic {
+  width: 300px;
+  height: 300px;
+  margin-left: 200px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+p.survey {
+  margin-left: 450px;
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  img.logoHome {
+    margin-left: 120px;
+  }
+
+  p.Line1 {
+    margin-left: 48px;
+    width: 500px;
+    font-size: 9px;
+  }
+
+  p.Line2 {
+    margin-left: 1px;
+    width: 600px;
+    font-size: 14px;
+    font-size: 9px;
+  }
+
+  p.Line3 {
+    margin-left: 10px;
+    width: 600px;
+    font-size: 14px;
+    font-size: 9px;
+  }
+
+  img.pic {
+    width: 70px;
+    height: 70px;
+    margin: 10px auto;
+    margin: 15px;
+    display: inline;
+    margin-left: 20px;
+  }
+
+  p.Line4 {
+    margin-left: 140px;
+    margin-top: 25px;
+    font-size: 9px;
+  }
+
+  p.survey {
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  img.logoHome {
+    margin-left: 200px;
+  }
+
+  p.Line1 {
+    margin-left: 70px;
+    width: 500px;
+    font-size: 14px;
+  }
+
+  p.Line2 {
+    margin-left: 5px;
+    width: 600px;
+    font-size: 14px;
+  }
+
+  p.Line3 {
+    margin-left: 15px;
+    width: 600px;
+    font-size: 14px;
+  }
+
+  img.pic {
+    width: 130px;
+    height: 130px;
+    margin: 10px auto;
+    margin: 15px;
+  }
+
+  p.Line4 {
+    margin-left: 200px;
+    margin-top: 25px;
+    font-size: 14px;
+  }
+
+  p.survey {
+    margin-left: 80px;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  img.logoHome {
+    margin-left: 340px;
+  }
+
+  p.Line1 {
+    margin-left: 190px;
+    width: 500px;
+  }
+
+  p.Line2 {
+    margin-left: 110px;
+    width: 600px;
+  }
+
+  p.Line3 {
+    margin-left: 130px;
+    width: 600px;
+  }
+
+  img.pic {
+    width: 150px;
+    height: 150px;
+    margin-left: 80px;
+  }
+
+  p.Line4 {
+    margin-left: 345px;
+    margin-top: 25px;
+  }
+
+  p.survey {
+    margin-left: 210px;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1215px) {
+  img.logoHome {
+    margin-left: 470px;
+  }
+
+  p.Line1 {
+    margin-left: 325px;
+    width: 500px;
+  }
+
+  p.Line2 {
+    margin-left: 250px;
+    width: 600px;
+  }
+
+  p.Line3 {
+    margin-left: 265px;
+    width: 600px;
+  }
+
+  img.pic {
+    width: 150px;
+    height: 150px;
+    margin-left: 140px;
+  }
+
+  p.Line4 {
+    margin-left: 475px;
+    margin-top: 25px;
+  }
+
+  p.survey {
+    margin-left: 340px;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1216px) {
+  img.logoHome {
+    margin-left: 570px;
+  }
+
+  p.Line1 {
+    margin-left: 420px;
+    width: 500px;
+  }
+
+  p.Line2 {
+    margin-left: 350px;
+    width: 600px;
+  }
+
+  p.Line3 {
+    margin-left: 360px;
+    width: 600px;
+  }
+
+  img.pic {
+    width: 250px;
+    height: 250px;
+    margin-left: 120px;
+  }
+
+  p.Line4 {
+    margin-left: 561px;
+    margin-top: 25px;
+  }
+}

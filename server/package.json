@@ -1,0 +1,36 @@
+{
+  "name": "project-solution",
+  "version": "1.2.0",
+  "description": "Business card app for businesses",
+  "main": "app.js",
+"scripts": {
+  "start": "node .",
+  "dev": "nodemon .",
+  "test": "jest"
+},
+  "keywords": [
+    "Business card",
+    "businesses app"
+  ],
+  "author": "David Yakin",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.1",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.43",
+    "mongoose": "^6.1.4",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.4"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4",
+    "nodemon": "^1.14.9"
+  }
+}

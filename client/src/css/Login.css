@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p.forgotpassword {
+  margin-right: 45px;
+  margin-top: 10px;
+}

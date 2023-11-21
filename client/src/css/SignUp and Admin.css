@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=Open+Sans:ital,wght@1,300&family=Square+Peg&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form.field {
+  width: 400px;
+  margin-left: 350px;
+  text-align: right;
+  direction: rtl;
+}
+
+div.orders {
+  direction: rtl;
+  margin-right: 350px;
+  margin-top: 10px;
+}
+
+p.line1 {
+  margin-right: -50px;
+}
+
+.animation-active {
+  animation: none !important;
+}

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.backgroundColor {
+  background-image: url("https://cdn.pixabay.com/photo/2017/06/15/02/07/snack-2403881_1280.png");
+}
+
+.copyrights {
+  text-align: center;
+  margin-top: 370px;
+  margin-right: 30px;
+}
+
+img.whatsapp {
+  width: 42px;
+  height: 42px;
+  margin-right: -4px;
+}
+
+img.phone {
+  width: 37px;
+  height: 37px;
+}
+
+img.email {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+img.instagram {
+  width: 37px;
+  height: 37px;
+  border-radius: 5px 5px 5px;
+  margin-right: -1px;
+}
+
+img.logoFooter {
+  width: 42px;
+  height: 42px;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .copyrights {
+    text-align: center;
+    margin-top: 370px;
+    margin-right: 25px;
+  }
+}

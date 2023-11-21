@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=Open+Sans:ital,wght@1,300&family=Square+Peg&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.accordion1 {
+  margin-top: 50px;
+  width: 700px;
+  margin-left: 300px;
+}
+
+.answer {
+  direction: rtl;
+}
+
+.accordion2 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion3 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion4 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion5 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion6 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion7 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+.accordion8 {
+  width: 700px;
+  margin-left: 100px;
+  margin-left: 300px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  div.accordion {
+    margin-left: -138px;
+  }
+
+  div.accordion1 {
+    width: 280px;
+  }
+
+  div.accordion2 {
+    width: 280px;
+  }
+
+  div.accordion3 {
+    width: 280px;
+  }
+
+  div.accordion4 {
+    width: 280px;
+  }
+
+  div.accordion5 {
+    width: 280px;
+  }
+
+  div.accordion6 {
+    width: 280px;
+  }
+
+  div.accordion7 {
+    width: 280px;
+  }
+
+  div.accordion8 {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  div.accordion {
+    margin-left: -142px;
+  }
+
+  div.accordion1 {
+    width: 450px;
+  }
+
+  div.accordion2 {
+    width: 450px;
+  }
+
+  div.accordion3 {
+    width: 450px;
+  }
+
+  div.accordion4 {
+    width: 450px;
+  }
+
+  div.accordion5 {
+    width: 450px;
+  }
+
+  div.accordion6 {
+    width: 450px;
+  }
+
+  div.accordion7 {
+    width: 450px;
+  }
+
+  div.accordion8 {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1215px) {
+  div.accordion {
+    margin-left: -130px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1215px) {
+  div.accordion {
+    margin-left: -55px;
+  }
+}

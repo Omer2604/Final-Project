@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.accessibility-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 100%;
+  width: auto;
+}
+
+.accessibility-menu button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px 10px 10px;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: red;
+  font-weight: bold;
+}
+
+body.dark-mode a {
+  color: red;
+}
+
+/* High contrast mode */
+body.high-contrast {
+  background-color: #fff;
+  color: #000;
+}
+
+body.high-contrast a {
+  color: #000;
+}
+
+/* Text-only mode */
+body.text-only * {
+  background: none !important;
+  color: #000 !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  text-decoration: none !important;
+  font-family: Arial, sans-serif !important;
+}
+
+body.text-only img {
+  display: none !important;
+}
+
+body.text-only *::before,
+body.text-only *::after {
+  content: none !important;
+}
+
+.font-family-buttons button:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.highlight-links {
+  background-color: yellow;
+}
+
+.highlighted-header {
+  text-decoration: underline;
+}
+
+.zoomed-element {
+  transform: scale(1.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+:root {
+  --animation-speed: 1s;
+}
+
+.some-animation {
+  animation-duration: var(--animation-speed);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .accessibility-menu {
+    top: auto;
+    bottom: 10%;
+    max-height: 500px;
+    overflow-y: auto;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .accessibility-menu {
+    top: auto;
+    bottom: 10%;
+    max-height: 500px;
+    overflow-y: auto;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .accessibility-menu {
+    top: auto;
+    bottom: 10%;
+    max-height: 500px;
+    overflow-y: auto;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1215px) {
+  .accessibility-menu {
+    top: auto;
+    bottom: 10%;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-width: 1216px) {
+  .accessibility-menu {
+    top: auto;
+    bottom: 10%;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}

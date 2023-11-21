@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navbar.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffc0cb;
+}
