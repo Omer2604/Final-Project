@@ -6,24 +6,11 @@ const { generateHashPassword } = require("../services/bcrypt");
 const data = {
   users: [
     {
-      name: "user",
-      email: "user@gmail.com",
-      password: 123456,
-      biz: false,
-    },
-    {
       name: "admin",
       email: "admin@gmail.com",
       password: 123456,
-      biz: true,
+      biz: false,
       isAdmin: true,
-    },
-    {
-      name: "business",
-      email: "business@gmail.com",
-      password: 123456,
-      biz: true,
-      isAdmin: false,
     },
   ],
   cards: [

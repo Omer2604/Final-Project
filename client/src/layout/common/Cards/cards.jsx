@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 import Card from "./card";
 import { getCurrentUser } from "./../../../services/userService";
-import "../../../css/cards.css";
 
 const Cards = ({ cards, handleDelete, changeLikeStatus }) => {
-  if (!cards.length) return <div className="results">לא נמצאו תוצאות</div>;
+  if (!cards.length) return <div>No Cards In The State Object...</div>;
 
   const user = getCurrentUser();
 

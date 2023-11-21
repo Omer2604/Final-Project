@@ -5,7 +5,7 @@ import CardHead from "./CardHead";
 
 const Card = ({ card, handleDelete, user, changeLikeStatus }) => {
   return (
-    <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3" dir="rtl">
+    <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3">
       <div className="card px-0">
         <CardHead card={card} />
         <CardBody card={card} />

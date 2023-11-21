@@ -17,7 +17,7 @@ function generateAuthToken(user) {
   }
 
   return jwt.sign(
-    { _id: user._id, biz: user.biz, isAdmin: user.isAdmi },
+    { _id: user._id, biz: user.biz, isAdmin: user.isAdmin },
     config.get("jwtKey"),
     { expiresIn: "3h" }
   );

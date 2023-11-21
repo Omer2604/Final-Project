@@ -9,10 +9,11 @@ const { validateCard } = require("./cardValidation");
 /********** סעיף 7 **********/
 router.get("/cards", async (req, res) => {
   try {
+    console.log("Getting all cards...");
     const cards = await Card.find();
     return res.send(cards);
   } catch (error) {
-    console.log(chalk.redBright(error.message));
+    console.log(chalk.redBright("Error fetching cards:", error.message));
     return res.status(500).send(error.message);
   }
 });
@@ -20,11 +21,20 @@ router.get("/cards", async (req, res) => {
 /********** סעיף 8 **********/
 router.get("/card/:id", async (req, res) => {
   try {
-    const cardID = req.params.id;
-    const card = await Card.findOne({ _id: cardID });
+    console.log(`Getting card with ID: ${req.params.id}`);
+    const card = await Card.findOne({ _id: req.params.id });
+    if (!card) {
+      console.log(`No card found with ID: ${req.params.id}`);
+      return res.status(404).send("Card not found.");
+    }
     return res.send(card);
   } catch (error) {
-    console.log(chalk.redBright(error.message));
+    console.log(
+      chalk.redBright(
+        `Error fetching card with ID: ${req.params.id}. Error:`,
+        error.message
+      )
+    );
     return res.status(500).send(error.message);
   }
 });
@@ -136,6 +146,12 @@ router.put("/:id", auth, async (req, res) => {
 router.delete("/:id", auth, async (req, res) => {
   try {
     let user = req.user;
+
+    console.log(chalk.blueBright("Deleting card request initiated"));
+    console.log(
+      chalk.greenBright(`User ID: ${user._id}, User Biz: ${user.biz}`)
+    );
+
     if (!user.biz) {
       console.log(
         chalk.redBright("A non-business user attempted to create a card!")
@@ -145,17 +161,17 @@ router.delete("/:id", auth, async (req, res) => {
 
     let card = await Card.findOneAndRemove({
       _id: req.params.id,
-      user_id: user._id,
     });
 
     if (!card) {
-      console.log(chalk.redBright("Un authorized user!"));
-      return res.status(403).send("You are noe authorize to delete cards");
+      console.log(chalk.redBright("Unauthorized user!"));
+      return res.status(403).send("You are not authorize to delete cards");
     }
 
+    console.log(chalk.greenBright("Card deleted successfully!"));
     return res.send(card);
   } catch (error) {
-    console.log(chalk.redBright("Could not delet card:", error.message));
+    console.log(chalk.redBright("Could not delete card:", error.message));
     return res.status(500).send(error.message);
   }
 });
@@ -163,22 +179,16 @@ router.delete("/:id", auth, async (req, res) => {
 
 router.patch("/card-like/:id", auth, async (req, res) => {
   try {
-    console.log(req.params.id);
     const user = req.user;
-    let card = await Card.findOne({ _id: req.params.id });
+    const cardId = req.params.id;
 
-    const cardLikes = card.likes.find((id) => id === user._id);
+    const updatedCard = await Card.findOneAndUpdate(
+      { _id: cardId },
+      { $addToSet: { likes: user._id } },
+      { new: true }
+    );
 
-    if (!cardLikes) {
-      card.likes.push(user._id);
-      card = await card.save();
-      return res.send(card);
-    }
-
-    const cardFiltered = card.likes.filter((id) => id !== user._id);
-    card.likes = cardFiltered;
-    card = await card.save();
-    return res.send(card);
+    res.send(updatedCard);
   } catch (error) {
     console.log(chalk.redBright("Could not edit like:", error.message));
     return res.status(500).send(error.message);

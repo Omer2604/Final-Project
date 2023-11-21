@@ -6,10 +6,9 @@ import { deleteCard, changeLikeStatus } from "../../../services/cardService";
 class CardExtends extends Component {
   handleDelete = (cardID) => {
     Swal.fire({
-      title: "?האם אתה בטוח שברצונך לבחוק כרטסייה זו",
+      title: "Are you sure you wont to delete this card?",
       showCancelButton: true,
-      confirmButtonText: "מחק",
-      cancelButtonText: "ביטול",
+      confirmButtonText: "Delete Card",
       confirmButtonColor: "#dc3545",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -17,15 +16,14 @@ class CardExtends extends Component {
         cards = cards.filter((card) => card._id !== cardID);
         this.setState({ cards });
         await deleteCard(cardID);
-        toast.success("הכרטיסיה נמחקה בהצלחה");
+        toast.success("You have successfully deleted the card!");
       }
     });
   };
 
   handleChange = (e) => {
-    const data = [...this.state.data];
-    let cards = data;
-    const searchTerm = e.target.value;
+    let cards = [...this.state.data];
+    const searchTerm = e.target.value.trim();
     const cardsFiltered = cards.filter((card) => {
       return (
         card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -60,15 +58,17 @@ class CardExtends extends Component {
       }
 
       card.likes = card.likes.filter((id) => id !== user._id);
-
       this.setState({ cards });
-
       await changeLikeStatus(card._id);
-
       return;
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  handleDisplay = (display) => {
+    let disChange = display === "table" ? "cards" : "table";
+    this.setState({ display: disChange });
   };
 }
 

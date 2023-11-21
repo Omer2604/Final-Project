@@ -19,6 +19,7 @@ import Survey from "./layout/main/Survey";
 import Contact from "./layout/main/Contact";
 import ForgotPassword from "./layout/main/ForgotPassword";
 import NewPassword from "./layout/main/NewPassword";
+import CardDetailsConvertor from "./layout/common/Cards/Card-Details/CardDetailsConvertor.jsx";
 import React from "react";
 
 function App() {
@@ -39,7 +40,15 @@ function App() {
             path="/edit-card/:id"
             element={<EditCardConvertor user={user} />}
           />
-          <Route path="/my-fav-cards" element={<MyFavoriteCards />} />
+          <Route
+            path="/gallery/card-details/:id"
+            element={<CardDetailsConvertor />}
+          />
+
+          <Route
+            path="/my-fav-cards"
+            element={<MyFavoriteCards user={user} />}
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

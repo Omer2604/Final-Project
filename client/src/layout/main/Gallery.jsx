@@ -4,12 +4,15 @@ import { getCards } from "../../services/cardService";
 import CardExtends from "../common/Cards/CardExtends";
 import Cards from "../common/Cards/cards";
 import SearchBar from "../common/SearchBar";
+import DisplayControllers from "../common/DisplayModes/DisplayControllers";
+import DisplayModes from "../common/DisplayModes/DisplayModes";
 
 class Gallery extends CardExtends {
   state = {
     data: [],
     cards: [],
     isMount: false,
+    display: "cards",
   };
 
   async componentDidMount() {
@@ -23,7 +26,7 @@ class Gallery extends CardExtends {
 
   render() {
     const cards = [...this.state.cards];
-    const { isMount } = this.state;
+    const { isMount, display } = this.state;
     if (!isMount) return null;
 
     return (
@@ -34,11 +37,25 @@ class Gallery extends CardExtends {
             placeholder={this.props.placeholder}
             handleChange={this.handleChange}
           />
-          <Cards
-            cards={cards}
-            handleDelete={this.handleDelete}
-            changeLikeStatus={this.changeLikeStatus}
+          <DisplayControllers
+            display={display}
+            handleDisplay={this.handleDisplay}
           />
+
+          {display === "table" ? (
+            <DisplayModes
+              cards={cards}
+              handleDelete={this.handleDelete}
+              changeLikeStatus={this.changeLikeStatus}
+              display={display}
+            />
+          ) : (
+            <Cards
+              cards={cards}
+              handleDelete={this.handleDelete}
+              changeLikeStatus={this.changeLikeStatus}
+            />
+          )}
         </div>
       </React.Fragment>
     );

@@ -1,13 +1,10 @@
 import PropTypes from "prop-types";
 
 const CardBody = ({ card }) => {
-  const { מחיר } = card;
+  // const { price } = card;
   return (
     <div className="card-body p-2">
-      <div>
-        <strong>מחיר: </strong>
-        {מחיר}
-      </div>
+      <div>לפירוט לחץ על התמונה</div>
     </div>
   );
 };

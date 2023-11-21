@@ -6,7 +6,6 @@ const CardHead = ({ card }) => {
   const {
     _id,
     title,
-    description,
     image: { url, alt },
   } = card;
 
@@ -17,7 +16,6 @@ const CardHead = ({ card }) => {
       </Link>
       <div className="p-2">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{description}</p>
         <hr className="m-0" />
       </div>
     </div>

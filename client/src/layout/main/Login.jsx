@@ -57,7 +57,14 @@ class Login extends Form {
               onSubmit={this.handleSubmit}
               autoComplete="off"
               method="POST"
-              style={{ direction: "rtl" }}
+              style={{
+                direction: "rtl",
+                maxWidth: "350px",
+                margin: "50px auto",
+                padding: "15px",
+                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                borderRadius: "8px",
+              }}
               className={this.getFormClasses()}
             >
               {this.renderInput("email", "מייל:", "email")}

@@ -40,7 +40,7 @@ function ForgotPassword() {
 
     const validationErrors = validate();
     setErrors(validationErrors || {});
-    if (validationErrors) return; // אם יש שגיאות - אנחנו לא ממשיכים לשלב הבא
+    if (validationErrors) return;
 
     await doSubmit();
   };
