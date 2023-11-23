@@ -4,6 +4,6 @@
   box-sizing: border-box;
 }
 
-div.results {
-  direction: rtl;
+table.table {
+  text-align: right;
 }

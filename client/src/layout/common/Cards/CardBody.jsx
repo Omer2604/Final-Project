@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 
-const CardBody = ({ card }) => {
-  // const { price } = card;
+const CardBody = () => {
   return (
-    <div className="card-body p-2">
+    <div className="card-body p-2" style={{ textAlign: "right" }}>
       <div>לפירוט לחץ על התמונה</div>
     </div>
   );

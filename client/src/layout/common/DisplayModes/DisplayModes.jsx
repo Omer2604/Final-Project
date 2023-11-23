@@ -3,8 +3,6 @@ import Cards from "../Cards/cards";
 import CardTable from "../Cards/CardTable";
 
 const DisplayModes = ({ cards, display, changeLikeStatus, handleDelete }) => {
-  if (!cards.length) return <div>אין כרגע כרטיסים שיצרתם</div>;
-
   if (display === "table") {
     return <CardTable cards={cards} />;
   }

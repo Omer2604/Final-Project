@@ -11,12 +11,13 @@ const CardControllers = ({ card, user, handleDelete, changeLikeStatus }) => {
     isCardLiked = cardLikes.find((id) => id === user._id);
 
   return (
-    <div className="justify-content-between d-flex px-2 pb-2">
-      {user && (user._id === card.user_id) | user.isAdmin ? (
-        <div>
+    <div>
+      {user && (user._id === card.user_id || user.isAdmin) ? (
+        <div style={{ textAlign: "right" }}>
           <span className="cursor" onClick={() => handleDelete(card._id)}>
             מחק |{" "}
           </span>
+
           <Link to={`/edit-card/${card._id}`}>
             <span className="cursor">ערוך</span>
           </Link>

@@ -1,25 +1,24 @@
 import PropTypes from "prop-types";
+import "../../../css/CardTable.css";
 
 const CardTable = ({ cards }) => {
   return (
     <table className="table ">
       <thead>
         <tr>
-          <th></th>
-          <th>שם המוצר</th>
           <th>תיאור</th>
           <th>מחיר</th>
+          <th>שם המוצר</th>
         </tr>
       </thead>
       <tbody>
-        {cards.map((card, i) => {
+        {cards.map((card) => {
           const { title, description, price } = card;
           return (
-            <tr key={i}>
-              <td>{i + 1}</td>
-              <td>{title}</td>
+            <tr>
               <td>{description}</td>
               <td>{price}</td>
+              <td>{title}</td>
             </tr>
           );
         })}
