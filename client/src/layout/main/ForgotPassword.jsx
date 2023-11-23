@@ -98,7 +98,7 @@ function ForgotPassword() {
       <form
         style={{
           direction: "rtl",
-          maxWidth: "350px",
+          maxWidth: "500px",
           margin: "50px auto",
           padding: "15px",
           boxShadow: "0 0 10px rgba(0,0,0,0.1)",

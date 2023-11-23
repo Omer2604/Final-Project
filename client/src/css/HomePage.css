@@ -51,6 +51,16 @@ img.pic {
 }
 
 p.survey {
-  margin-left: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  p.survey {
+    display: block;
+    text-align: center;
+    margin: 15px auto;
+  }
 }

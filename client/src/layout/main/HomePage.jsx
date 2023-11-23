@@ -30,7 +30,7 @@ class HomePage extends Component {
         <PageHeader title="Eden Cakes" subTitle="!ברוכים הבאים לאתר שלנו" />
         <div
           style={{
-            direction: "rtl",
+            textAlign: "center",
             maxWidth: "500px",
             margin: "20px auto",
             padding: "50px",

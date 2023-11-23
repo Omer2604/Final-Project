@@ -3,8 +3,6 @@ import Card from "./card";
 import { getCurrentUser } from "./../../../services/userService";
 
 const Cards = ({ cards, handleDelete, changeLikeStatus }) => {
-  if (!cards.length) return <div>No Cards In The State Object...</div>;
-
   const user = getCurrentUser();
 
   return (

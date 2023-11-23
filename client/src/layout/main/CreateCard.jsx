@@ -46,10 +46,7 @@ class CreateCard extends Form {
     return (
       <div style={{ minHeight: "85vh" }} className="container-fluid pb-4">
         <div className="container">
-          <PageHeader
-            title="צור קינוח"
-            subTitle="בדף זה תוכלו ליצור כרטיסיות משלכם ולרשום על קינוחים שהזמנתם ולא הופיעו באתר ותרצו להזמינם שוב"
-          />
+          <PageHeader title="צור קינוח" />
           <div className="center">
             <form
               onSubmit={this.handleSubmit}

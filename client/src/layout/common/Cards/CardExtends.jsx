@@ -6,9 +6,10 @@ import { deleteCard, changeLikeStatus } from "../../../services/cardService";
 class CardExtends extends Component {
   handleDelete = (cardID) => {
     Swal.fire({
-      title: "Are you sure you wont to delete this card?",
+      title: "האם אתה בטוח שברצונך למחוק כרטיסיה זו?",
       showCancelButton: true,
-      confirmButtonText: "Delete Card",
+      cancelButtonText: "ביטול",
+      confirmButtonText: "מחק",
       confirmButtonColor: "#dc3545",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -16,7 +17,7 @@ class CardExtends extends Component {
         cards = cards.filter((card) => card._id !== cardID);
         this.setState({ cards });
         await deleteCard(cardID);
-        toast.success("You have successfully deleted the card!");
+        toast.success("!הכרטיסיה נמחקה בהצלחה");
       }
     });
   };
