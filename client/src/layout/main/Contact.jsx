@@ -51,7 +51,7 @@ class Contact extends Component {
               padding: "20px",
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
               borderRadius: "8px",
-              backgroundColor: "rgba(248, 228, 247, 0.5)", // 50% שקיפות
+              backgroundColor: "rgba(248, 228, 247, 0.5)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
