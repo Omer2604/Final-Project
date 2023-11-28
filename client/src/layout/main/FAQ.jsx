@@ -39,9 +39,7 @@ class FAQ extends Component {
             </Accordion.Item>
 
             <Accordion.Item eventKey="3" className="accordion4">
-              <Accordion.Header>
-                כיצד ניתן לראות את המוצרים שלכם ולדעת את המחירים שלכם
-              </Accordion.Header>
+              <Accordion.Header>כיצד ניתן לראות את המוצרים</Accordion.Header>
               <Accordion.Body className="answer">
                 ניתן להיכנס לדף האינסטגרם שלנו אשר נמצא בתחתית העמוד ולראות שם
                 את כל המוצרים שלנו. בנוסף ניתן להיכנס אל{" "}
@@ -60,7 +58,7 @@ class FAQ extends Component {
 
             <Accordion.Item eventKey="5" className="accordion6">
               <Accordion.Header>
-                כיצד אני יודע שההזמנה שלי מאושרת
+                איך אני יודע שההזמנה שלי מאושרת
               </Accordion.Header>
               <Accordion.Body className="answer">
                 כל פנייה מקבלת מענה. במידה והפנייה שלכם לא קיבלה מענה סימן שלא

@@ -43,10 +43,8 @@ class Signup extends Form {
       const user = { ...this.state.data };
       await signup(user);
       toast.success(`${user.name} נרשמת בהצלחה`);
-
-      // Update showConfetti to true
       this.setState({ showConfetti: true }, () => {
-        console.log("Updated showConfetti: ", this.state.showConfetti); // Debug line
+        console.log("Updated showConfetti: ", this.state.showConfetti);
       });
 
       setTimeout(async () => {

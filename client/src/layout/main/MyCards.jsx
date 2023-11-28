@@ -39,8 +39,13 @@ class MyCards extends CardExtends {
         <div className="container">
           <Link to="/create-card">
             <span
-              className="btn btn-primary"
-              style={{ marginLeft: "950px", marginTop: "-50px" }}
+              className="btn btn-primary btn-block"
+              style={{
+                width: "200px", // כאן יש לך את הרוחב הקבוע של הכפתור
+                display: "block",
+                margin: "0 auto",
+                marginTop: "20px",
+              }}
             >
               צור כרטיסיה חדשה
             </span>

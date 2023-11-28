@@ -129,6 +129,7 @@ class Contact extends Component {
             />
             <br />
             <Button
+              style={{ marginTop: "10px" }}
               className="buttonSend col-8"
               variant="primary"
               type="submit"

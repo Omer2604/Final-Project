@@ -62,3 +62,9 @@
 .accordion8 {
   direction: rtl;
 }
+
+@media (max-width: 480px) {
+  .accordion-item {
+    width: 100%;
+  }
+}

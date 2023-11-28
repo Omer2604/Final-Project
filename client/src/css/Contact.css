@@ -18,3 +18,27 @@ div.map {
   align-items: center;
   height: 300px;
 }
+
+@media (max-width: 479px) {
+  .text-center {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="text"] {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="email"] {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="tel"] {
+    font-size: 10px;
+  }
+}

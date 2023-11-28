@@ -17,8 +17,13 @@ class Login extends Form {
   };
 
   schema = {
-    email: Joi.string().required().email().label("Email"),
-    password: Joi.string().required().min(6).label("Password"),
+    name: Joi.string().min(2).required().label("שם"),
+    email: Joi.string().email().required().label('דוא"ל'),
+    password: Joi.string()
+      .min(8)
+      .regex(/.*[!@#$%^&*()_+\-={}';":|,.<>?].*/)
+      .required()
+      .label("סיסמה"),
   };
 
   doSubmit = async () => {

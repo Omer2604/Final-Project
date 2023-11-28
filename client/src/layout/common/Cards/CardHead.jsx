@@ -14,7 +14,7 @@ const CardHead = ({ card }) => {
       <Link to={`card-details/${_id}`}>
         <img className="img-fluid" src={url} alt={alt} />
       </Link>
-      <div className="p-2">
+      <div className="p-2 card-content">
         <h5 className="card-title">{title}</h5>
         <hr className="m-0" />
       </div>
