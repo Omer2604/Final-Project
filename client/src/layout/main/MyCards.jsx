@@ -41,7 +41,7 @@ class MyCards extends CardExtends {
             <span
               className="btn btn-primary btn-block"
               style={{
-                width: "200px", // כאן יש לך את הרוחב הקבוע של הכפתור
+                width: "200px",
                 display: "block",
                 margin: "0 auto",
                 marginTop: "20px",

@@ -17,7 +17,6 @@ class Login extends Form {
   };
 
   schema = {
-    name: Joi.string().min(2).required().label("שם"),
     email: Joi.string().email().required().label('דוא"ל'),
     password: Joi.string()
       .min(8)
@@ -64,7 +63,7 @@ class Login extends Form {
               method="POST"
               style={{
                 direction: "rtl",
-                maxWidth: "500px",
+                maxWidth: "400",
                 margin: "50px auto",
                 padding: "15px",
                 boxShadow: "0 0 10px rgba(0,0,0,0.1)",

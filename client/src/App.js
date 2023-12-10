@@ -49,6 +49,10 @@ function App() {
             path="/my-fav-cards"
             element={<MyFavoriteCards user={user} />}
           />
+          <Route
+            path="/my-fav-cards/card-details/:id"
+            element={<CardDetailsConvertor />}
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

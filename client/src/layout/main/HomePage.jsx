@@ -25,7 +25,7 @@ class HomePage extends Component {
     const { currentTime } = this.state;
     return (
       <React.Fragment>
-        <div className="date-time">{currentTime.toLocaleString()}</div>;
+        <div className="date-time">{currentTime.toLocaleString()}</div>
         <img className="logoHome" src="/assets/images/logo.png" alt="לוגו" />
         <PageHeader title="Eden Cakes" subTitle="!ברוכים הבאים לאתר שלנו" />
         <div

@@ -10,23 +10,24 @@ class MyFavoriteCards extends CardExtends {
     data: [],
     cards: [],
     isMounted: false,
+    loading: true,
   };
 
   async componentDidMount() {
     try {
       const { data } = await getCards();
-      this.setState({ data, cards: data, isMounted: true });
+      this.setState({ data, cards: data, isMounted: true, loading: false });
     } catch (error) {
-      console.log(error.message);
+      console.error("Error fetching cards:", error.message);
+      this.setState({ loading: false });
     }
   }
 
   render() {
-    const cards = [...this.state.cards];
-    const { isMounted } = this.state;
+    const { cards, isMounted, loading } = this.state;
     const { user } = this.props;
+
     if (!user) return <Navigate to="/" />;
-    if (!isMounted) return null;
 
     return (
       <React.Fragment>
@@ -36,12 +37,19 @@ class MyFavoriteCards extends CardExtends {
         />
 
         <div className="container">
-          <FavoriteCards
-            cards={cards}
-            user={user}
-            changeLikeStatus={this.changeLikeStatus}
-            handleDelete={this.handleDelete}
-          />
+          {loading && <p>Loading...</p>}
+          {!loading && !isMounted && <p>Error loading cards</p>}
+          {!loading && isMounted && cards.length === 0 && (
+            <p>No favorite cards found.</p>
+          )}
+          {!loading && isMounted && cards.length > 0 && (
+            <FavoriteCards
+              cards={cards}
+              user={user}
+              changeLikeStatus={this.changeLikeStatus}
+              handleDelete={this.handleDelete}
+            />
+          )}
         </div>
       </React.Fragment>
     );
