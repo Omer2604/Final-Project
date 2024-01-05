@@ -6,17 +6,16 @@
 
 img.logoHome {
   width: 80px;
-  height: auto; /* ישמור על יחסי רוחב-גובה מקוריים של התמונה */
-  display: block; /* יתעלה מבעיה של רווח תוך כדי שהתמונה נטענת */
-  margin-left: auto; /* יציב את השוליים בצדדים שמאל וימין של ההורה */
-  margin-right: auto;
-  border-radius: 10px; /* הצגת פינות מעוגלות */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .text-container {
   direction: rtl;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -28,24 +27,22 @@ img.logoHome {
   padding: 10px;
 }
 
-p.Line1,
-p.Line2,
-p.Line3,
-p.Line4 {
+.Line1,
+.Line2,
+.Line3,
+.Line4 {
   text-align: center;
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 15px;
-  color: #333; /* צבע הטקסט */
+  color: #333;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 img.pic {
   width: 250px;
-  width: 250px;
-  margin-left: 150px;
-  margin-right: 5px;
+  margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 5px;
 }

@@ -6,12 +6,12 @@ const Input = ({ name, label, error, ...rest }) => {
     <div className="form-group mb-1">
       <label htmlFor={name}>{label}</label>
       <input {...rest} name={name} id={name} className="form-control" />
-      {error && <span className="text-danger">{error}</span>}
+      {error && <div className="text-danger">{error}</div>}
     </div>
   );
 };
 
-Input.protoType = {
+Input.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   error: PropTypes.string,

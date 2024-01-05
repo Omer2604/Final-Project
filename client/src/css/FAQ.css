@@ -17,12 +17,12 @@
 }
 
 .accordion-item:first-of-type .accordion-button {
-  background-color: pink;
+  background-color: #f8e8f7;
   border: solid black 1px;
 }
 
 [type="button"]:not(:disabled) {
-  background-color: pink;
+  background-color: #f8e8f7;
   border: solid black 1px;
 }
 

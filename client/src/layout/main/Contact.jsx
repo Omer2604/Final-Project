@@ -113,7 +113,7 @@ class Contact extends Component {
                 type="text"
                 placeholder="תקלה\הזמנה\שאלה\הצעה\אחר"
                 required
-                name="Subject"
+                name="subject"
               />
             </Form.Group>
             <Form.Label className="LabelRemarks col-8">תוכן הפנייה:</Form.Label>

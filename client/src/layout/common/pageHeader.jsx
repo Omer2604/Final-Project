@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 
 const PageHeader = ({ title, subTitle }) => {
   return (
-    <div className="center">
-      <div className="text-center">
-        <h1 className="text-center display-4">{title}</h1>
-        <h2 className="fs-5">{subTitle}</h2>
-      </div>
-    </div>
+    <header className="text-center">
+      <h1 className="display-4">{title}</h1>
+      <h2 className="fs-5">{subTitle}</h2>
+    </header>
   );
 };
 
