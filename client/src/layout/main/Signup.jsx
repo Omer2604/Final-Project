@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./../common/Form/Form";
 import PageHeader from "./../common/pageHeader";
 import { toast } from "react-toastify";
-import { getCurrentUser, login, signup } from "../../services/userService";
+import { getCurrentUser, signup } from "../../services/userService";
 import { Navigate } from "react-router-dom";
 import Joi from "joi-browser";
 import Confetti from "react-confetti";
@@ -43,17 +43,12 @@ class Signup extends Form {
       const user = { ...this.state.data };
       await signup(user);
       toast.success(`${user.name} נרשמת בהצלחה`);
-      this.setState({ showConfetti: true }, () => {
-        console.log("Updated showConfetti: ", this.state.showConfetti);
-      });
+      this.setState({ showConfetti: true });
 
-      setTimeout(async () => {
-        delete user.name;
-        await login(user);
-        window.location = "/";
+      setTimeout(() => {
+        window.location = "/login";
       }, 2000);
     } catch (error) {
-      console.log("Error: ", error);
       if (error.response && error.response.status === 400) {
         this.setState({ errors: { email: "המשתמש קיים כבר במערכת" } });
       }

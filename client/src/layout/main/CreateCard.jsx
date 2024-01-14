@@ -41,7 +41,7 @@ class CreateCard extends Form {
     if (!user || (user && !user.biz)) return <Navigate replace to="/" />;
 
     const { isCardCreated } = this.state;
-    if (isCardCreated) return <Navigate replace to="/my-cards" />;
+    if (isCardCreated) return <Navigate replace to="/gallery" />;
 
     return (
       <div style={{ minHeight: "85vh" }} className="container-fluid pb-4">

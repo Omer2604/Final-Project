@@ -6,8 +6,7 @@ const CardDetailsConvertor = () => {
   const { id } = useParams();
 
   if (!id || id === "undefined") {
-    // כאן תוכל להחזיר משהו, לדוג' הודעת שגיאה או להפנות לדף 404
-    return <div>Error: Card ID is missing or invalid</div>;
+    return <div>שגיאה: התמונה חסרה או לא זמינה מסיבה מסוימת</div>;
   }
 
   return <CardDetails id={id} />;

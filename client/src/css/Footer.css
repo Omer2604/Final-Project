@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.backgroundColor {
-  background-image: url("https://cdn.pixabay.com/photo/2017/06/15/02/07/snack-2403881_1280.png");
-}
-
 .copyrights {
   text-align: center;
   margin-top: 370px;

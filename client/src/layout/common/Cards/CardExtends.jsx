@@ -10,7 +10,8 @@ class CardExtends extends Component {
       showCancelButton: true,
       cancelButtonText: "ביטול",
       confirmButtonText: "מחק",
-      confirmButtonColor: "#dc3545",
+      cancelButtonColor: "#fa2d16",
+      confirmButtonColor: "#e0bfe0",
     }).then(async (result) => {
       if (result.isConfirmed) {
         let cards = [...this.state.cards];

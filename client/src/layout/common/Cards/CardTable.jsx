@@ -6,18 +6,16 @@ const CardTable = ({ cards }) => {
     <table className="table ">
       <thead>
         <tr>
-          <th>תיאור</th>
-          <th>מחיר</th>
+          <th>מספר לייקים</th>
           <th>שם המוצר</th>
         </tr>
       </thead>
       <tbody>
         {cards.map((card) => {
-          const { title, description, price } = card;
+          const { title, likes } = card;
           return (
             <tr>
-              <td>{description}</td>
-              <td>{price}</td>
+              <td>{likes.length}</td>
               <td>{title}</td>
             </tr>
           );

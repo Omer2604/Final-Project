@@ -12,6 +12,10 @@ img.logoHome {
   border-radius: 10px;
 }
 
+.backgroundColor {
+  background-image: url("C:\Users\reut\Desktop\Final Project\client\public\assets\images\background.png");
+}
+
 .text-container {
   direction: rtl;
   max-width: 500px;

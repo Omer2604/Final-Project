@@ -60,7 +60,7 @@ class EditCard extends Form {
 
     if (!isMounted) return null;
 
-    if (isCardEdit) return <Navigate replace to="/my-cards" />;
+    if (isCardEdit) return <Navigate replace to="/gallery" />;
 
     return (
       <div style={{ minHeight: "85vh" }} className="container-fluid pb-4">

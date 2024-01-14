@@ -3,21 +3,20 @@ import Cards from "../Cards/cards";
 import CardTable from "../Cards/CardTable";
 
 const DisplayModes = ({ cards, display, changeLikeStatus, handleDelete }) => {
-  if (display === "table") {
-    return <CardTable cards={cards} />;
+  switch (display) {
+    case "table":
+      return <CardTable cards={cards} />;
+    case "cards":
+      return (
+        <Cards
+          cards={cards}
+          changeLikeStatus={changeLikeStatus}
+          handleDelete={handleDelete}
+        />
+      );
+    default:
+      return <div>Invalid display mode: {display}</div>;
   }
-
-  if (display === "cards") {
-    return (
-      <Cards
-        cards={cards}
-        changeLikeStatus={changeLikeStatus}
-        handleDelete={handleDelete}
-      />
-    );
-  }
-
-  return <div>Invalid display mode: {display}</div>;
 };
 
 DisplayModes.propTypes = {

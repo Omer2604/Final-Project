@@ -32,7 +32,6 @@ export async function forgotPassword(email) {
 }
 
 export async function resetPassword(password, resetPasswordToken) {
-  // Extracting the actual token string if resetPasswordToken is an object
   const actualToken =
     resetPasswordToken.resetPasswordToken || resetPasswordToken;
 
@@ -41,7 +40,7 @@ export async function resetPassword(password, resetPasswordToken) {
     resetPasswordToken: actualToken,
   });
 
-  return response.data.message; // חוזר רק עם המחרוזת שבשדה message
+  return response.data.message;
 }
 
 export const getJWT = () => localStorage.getItem("token");
