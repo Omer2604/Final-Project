@@ -75,6 +75,7 @@ router.post("/", auth, async (req, res) => {
     card = new Card({
       title: card.title,
       description: card.description,
+      price: card.price,
       image: {
         url: card.url
           ? card.url
@@ -116,6 +117,7 @@ router.put("/:id", auth, async (req, res) => {
     card = {
       title: card.title,
       description: card.description,
+      price: card.price,
       address: card.address,
       phone: card.phone,
       image: {

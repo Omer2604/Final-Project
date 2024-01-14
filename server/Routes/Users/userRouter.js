@@ -1,5 +1,5 @@
 const validateRegistration = require("./usersValidations/registraion");
-const validateSignin = require("./usersValidations/signIn");
+// const validateSignin = require("./usersValidations/signIn");
 const {
   comparePassword,
   generateHashPassword,
@@ -15,26 +15,25 @@ const SECRET_KEY = "YourPrivateKeyVer3";
 
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
-  if (error) {
-    console.log(chalk.redBright(error.details[0].message));
-    return res.status(400).send(error.details[0].message);
-  }
+  if (error) return res.status(400).send(error.details[0].message);
 
   let user = await User.findOne({ email: req.body.email });
-  console.log("User object before passing to generateAuthToken:", user);
-  if (user) {
-    console.log(chalk.redBright("Registration Error: User already registered"));
-    return res.status(400).send("User already registered.");
-  }
+  if (user) return res.status(400).send("User already registered.");
 
-  user = new User(
-    _.pick(req.body, ["name", "email", "password", "biz", "cards"])
-  );
+  user = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  });
 
-  user.password = generateHashPassword(user.password);
+  const salt = await bcrypt.genSalt(10);
+  user.password = await bcrypt.hash(user.password, salt);
   await user.save();
-  res.send(_.pick(user, ["_id", "name", "email"]));
+
+  res.send({ _id: user._id, name: user.name, email: user.email });
 });
+
+module.exports = router;
 
 router.post("/login", async (req, res) => {
   const { error } = validateSignin(req.body);

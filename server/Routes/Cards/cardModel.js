@@ -13,6 +13,12 @@ const cardSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 1024,
   },
+  price: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 1024,
+  },
   image: {
     url: {
       type: String,
