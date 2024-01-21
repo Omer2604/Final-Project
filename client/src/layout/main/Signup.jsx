@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "./../common/Form/Form";
-import PageHeader from "./../common/pageHeader";
+import Form from "../common/Form/Form";
+import PageHeader from "../common/pageHeader";
 import { toast } from "react-toastify";
 import { getCurrentUser, signup } from "../../services/userService";
 import { Navigate } from "react-router-dom";

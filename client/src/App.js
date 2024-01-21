@@ -8,7 +8,7 @@ import Logout from "./layout/main/Logout";
 import MyCards from "./layout/main/MyCards";
 import MyFavoriteCards from "./layout/main/MyFavoriteCards";
 import Login from "./layout/main/Login";
-import Signup from "./layout/main/Signup";
+import SignUp from "./layout/main/SignUp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getCurrentUser } from "./services/userService";
@@ -54,7 +54,7 @@ function App() {
             element={<CardDetailsConvertor />}
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/SignUp" element={<SignUp />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route
             path="/newpassword/:YourPrivateKeyVer3"

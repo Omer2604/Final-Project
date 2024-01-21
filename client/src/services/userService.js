@@ -23,7 +23,7 @@ export const getCurrentUser = () => {
 
 export const logout = () => {
   localStorage.removeItem("token");
-  http.updateAxiosJWT(); // Update Axios headers after logout
+  http.updateAxiosJWT();
   return (window.location = "/");
 };
 
