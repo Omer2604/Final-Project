@@ -1,6 +1,6 @@
-const Joi = require("joi");
+const Joi = require("Joi");
 
-function validateSignIn(req) {
+function validateLogin(req) {
   const schema = Joi.object({
     email: Joi.string().email().required().label('דוא"ל'),
     password: Joi.string()
@@ -13,4 +13,4 @@ function validateSignIn(req) {
   return schema.validate(req);
 }
 
-module.exports = validateSignIn;
+module.exports = validateLogin;

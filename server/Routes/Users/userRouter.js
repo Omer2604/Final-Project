@@ -1,5 +1,5 @@
-const validateRegistration = require("./usersValidations/registraion");
-// const validateSignin = require("./usersValidations/signIn");
+const validateRegistration = require("./usersValidations/SignUp");
+const validateLogin = require("./usersValidations/Login");
 const {
   comparePassword,
   generateHashPassword,
@@ -12,6 +12,7 @@ const auth = require("../../middlewares/authorization");
 const chalk = require("chalk");
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = "YourPrivateKeyVer3";
+const bcrypt = require("bcrypt");
 
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
@@ -36,7 +37,7 @@ router.post("/register", async (req, res) => {
 module.exports = router;
 
 router.post("/login", async (req, res) => {
-  const { error } = validateSignin(req.body);
+  const { error } = validateLogin(req.body);
   if (error) {
     console.log(chalk.redBright(error.details[0].message));
     return res.status(400).send(error.details[0].message);
@@ -103,7 +104,6 @@ router.post("/forgotpassword", async (req, res) => {
     console.log("Updating user with new reset token...");
     await user.save();
 
-    // Retrieving the user from the database to confirm the changes
     const updatedUser = await User.findById(user._id);
     console.log("Updated User with new reset token:", updatedUser);
 
