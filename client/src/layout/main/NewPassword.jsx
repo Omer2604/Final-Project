@@ -31,11 +31,7 @@ class NewPassword extends Form {
   }
 
   schema = {
-    password: Joi.string()
-      .min(8)
-      .regex(/.*[!@#$%^&*()_+\-={}';":|,.<>?].*/)
-      .required()
-      .label("New Password"),
+    password: Joi.string().required().min(6).label("New Password"),
     passwordConfirm: Joi.string()
       .required()
       .valid(Joi.ref("password"))
