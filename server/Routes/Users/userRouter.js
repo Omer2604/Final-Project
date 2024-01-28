@@ -1,5 +1,5 @@
-const validateRegistration = require("./usersValidations/SignUp");
-const validateLogin = require("./usersValidations/Login");
+const validateRegistration = require("./usersValidations/registraion");
+const validateSignin = require("./usersValidations/signIn");
 const {
   comparePassword,
   generateHashPassword,
@@ -12,32 +12,32 @@ const auth = require("../../middlewares/authorization");
 const chalk = require("chalk");
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = "YourPrivateKeyVer3";
-const bcrypt = require("bcrypt");
 
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) {
+    console.log(chalk.redBright(error.details[0].message));
+    return res.status(400).send(error.details[0].message);
+  }
 
   let user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(400).send("User already registered.");
+  console.log("User object before passing to generateAuthToken:", user);
+  if (user) {
+    console.log(chalk.redBright("Registration Error: User already registered"));
+    return res.status(400).send("User already registered.");
+  }
 
-  user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
+  user = new User(
+    _.pick(req.body, ["name", "email", "password", "biz", "cards"])
+  );
 
-  const salt = await bcrypt.genSalt(10);
-  user.password = await bcrypt.hash(user.password, salt);
+  user.password = generateHashPassword(user.password);
   await user.save();
-
-  res.send({ _id: user._id, name: user.name, email: user.email });
+  res.send(_.pick(user, ["_id", "name", "email"]));
 });
 
-module.exports = router;
-
 router.post("/login", async (req, res) => {
-  const { error } = validateLogin(req.body);
+  const { error } = validateSignin(req.body);
   if (error) {
     console.log(chalk.redBright(error.details[0].message));
     return res.status(400).send(error.details[0].message);
@@ -104,6 +104,7 @@ router.post("/forgotpassword", async (req, res) => {
     console.log("Updating user with new reset token...");
     await user.save();
 
+    // Retrieving the user from the database to confirm the changes
     const updatedUser = await User.findById(user._id);
     console.log("Updated User with new reset token:", updatedUser);
 

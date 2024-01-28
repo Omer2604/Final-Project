@@ -17,7 +17,6 @@ const data = {
     {
       title: "First Card",
       description: "My First Card",
-      price: " שקלם5 ",
       image: {
         url: "http://localhost:3000/assets/images/donats.png",
         alt: "Cat Foot",
