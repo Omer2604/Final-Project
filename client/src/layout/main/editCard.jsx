@@ -84,11 +84,19 @@ class EditCard extends Form {
               {this.renderInput("title", "כותרת")}
               {this.renderTextarea("description", "תיאור")}
               {this.renderInput("url", "תמונה")}
-              {this.renderButton("אישור")}
 
-              <Link to="/my-cards">
-                <span className="btn btn-danger mt-1 col-12">ביטול</span>
-              </Link>
+              <div className="row mt-2">
+                <div className="col-12 mb-2">
+                  <button className="btn btn-primary btn-lg col-12">
+                    אישור
+                  </button>
+                </div>
+                <div className="col-12">
+                  <Link to="/gallery" className="btn btn-danger btn-lg col-12">
+                    ביטול
+                  </Link>
+                </div>
+              </div>
             </form>
           </div>
         </div>

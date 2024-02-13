@@ -6,7 +6,6 @@ const chalk = require("chalk");
 const { generateBizNum } = require("./services/generateBizNum");
 const { validateCard } = require("./cardValidation");
 
-/********** סעיף 7 **********/
 router.get("/cards", async (req, res) => {
   try {
     console.log("Getting all cards...");
@@ -18,7 +17,6 @@ router.get("/cards", async (req, res) => {
   }
 });
 
-/********** סעיף 8 **********/
 router.get("/card/:id", async (req, res) => {
   try {
     console.log(`Getting card with ID: ${req.params.id}`);
@@ -39,7 +37,6 @@ router.get("/card/:id", async (req, res) => {
   }
 });
 
-/********** סעיף 9 **********/
 router.get("/my-cards", auth, async (req, res) => {
   try {
     let user = req.user;
@@ -52,7 +49,6 @@ router.get("/my-cards", auth, async (req, res) => {
   }
 });
 
-/********** סעיף 10 **********/
 router.post("/", auth, async (req, res) => {
   try {
     const user = req.user;
@@ -93,7 +89,6 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-/********** סעיף 11 **********/
 router.put("/:id", auth, async (req, res) => {
   try {
     let user = req.user;
@@ -142,7 +137,6 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-/********** סעיף 12 **********/
 router.delete("/:id", auth, async (req, res) => {
   try {
     let user = req.user;
@@ -175,7 +169,6 @@ router.delete("/:id", auth, async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
-/********** סעיף 13 **********/
 
 router.patch("/card-like/:id", auth, async (req, res) => {
   try {

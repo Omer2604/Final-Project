@@ -31,7 +31,11 @@ class NewPassword extends Form {
   }
 
   schema = {
-    password: Joi.string().required().min(6).label("New Password"),
+    password: Joi.string()
+      .min(8)
+      .regex(/.*[!@#$%^&*()_+\-={}';":|,.<>?].*/)
+      .required()
+      .label("סיסמה חדשה"),
     passwordConfirm: Joi.string()
       .required()
       .valid(Joi.ref("password"))
@@ -61,7 +65,7 @@ class NewPassword extends Form {
       });
       console.log("After calling resetPassword", responseMessage);
 
-      if (responseMessage === "הסיסמה שונתה בהצלחה") {
+      if (responseMessage === "Password has been reset successfully.") {
         console.log("Inside success condition", responseMessage);
         this.setState({ showConfetti: true });
 
@@ -72,7 +76,7 @@ class NewPassword extends Form {
         }).then(() => {
           setTimeout(() => {
             this.props.navigate("/login");
-          }, 3000);
+          }, 2000);
         });
       } else {
         console.log("Inside else condition. Server response:", responseMessage);

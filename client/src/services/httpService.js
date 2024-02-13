@@ -12,21 +12,18 @@ function updateAxiosJWT() {
 
   if (jwt) {
     axios.defaults.headers.common["x-auth-token"] = jwt;
-    console.log("Debug: Setting Axios JWT Header", jwt); // Log when JWT is set
+    console.log("Debug: Setting Axios JWT Header", jwt);
   } else {
     delete axios.defaults.headers.common["x-auth-token"];
-    console.log("Debug: Deleting Axios JWT Header"); // Log when JWT is deleted
+    console.log("Debug: Deleting Axios JWT Header");
   }
 
-  // Log updated Axios headers
   console.log("Debug: Updated Axios headers:", axios.defaults.headers.common);
 }
 
-// Call and log the initial configuration
 console.log("Debug: Initial call to updateAxiosJWT");
 updateAxiosJWT();
 
-// Intercept requests to log headers
 axios.interceptors.request.use((request) => {
   console.log("Debug: Axios headers before request:", request.headers);
   return request;
@@ -34,9 +31,9 @@ axios.interceptors.request.use((request) => {
 
 axios.interceptors.response.use((response) => {
   if (response.data && response.data.message) {
-    toast.success(`Success: ${response.data.message}`);
+    toast.success(`הסיסמה שונתה בהצלחה`);
   }
-  console.log("Debug: Response Data:", response.data); // Log response data
+  console.log("Debug: Response Data:", response.data);
   return response;
 }, null);
 

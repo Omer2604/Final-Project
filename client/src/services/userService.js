@@ -9,7 +9,7 @@ export const login = async (user) => {
     data: { token },
   } = await http.post(`${apiUrl}/users/login`, user);
   localStorage.setItem("token", token);
-  http.updateAxiosJWT(); // Update Axios headers after login
+  http.updateAxiosJWT();
 };
 
 export const getCurrentUser = () => {
@@ -23,7 +23,7 @@ export const getCurrentUser = () => {
 
 export const logout = () => {
   localStorage.removeItem("token");
-  http.updateAxiosJWT(); // Update Axios headers after logout
+  http.updateAxiosJWT();
   return (window.location = "/");
 };
 

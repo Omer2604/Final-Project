@@ -1,21 +1,11 @@
-const Joi = require("joi-browser");
+const Joi = require("joi");
 
-function validateForgotPassword(data) {
-  console.log("Validating forgot password data:", data);
-
+const validateForgotPassword = (data) => {
   const schema = Joi.object({
-    email: Joi.string().email().required(),
+    email: Joi.string().email().required().label("Email"),
   });
 
-  const validationResult = schema.validate(data);
-
-  if (validationResult.error) {
-    console.log("Validation error:", validationResult.error.details[0].message);
-  }
-
-  return validationResult;
-}
-
-module.exports = {
-  validateForgotPassword,
+  return schema.validate(data, { abortEarly: false });
 };
+
+module.exports = validateForgotPassword;

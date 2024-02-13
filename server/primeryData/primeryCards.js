@@ -8,74 +8,80 @@ const data = {
     {
       name: "admin",
       email: "admin@gmail.com",
-      password: 123456,
-      biz: false,
+      password: hashedPassword,
+      biz: true,
       isAdmin: true,
     },
   ],
   cards: [
     {
-      title: "First Card",
-      description: "My First Card",
+      title: "סופגניות בטעמים שונים",
+      description: "25.10.24-2.1.25",
       image: {
         url: "http://localhost:3000/assets/images/donats.png",
-        alt: "Cat Foot",
-      },
-      bizNumber: "1000000",
-      likes: [],
-      user_id: "621f3f27dde069e62aa3bcab",
-    },
-    {
-      title: "Second Card",
-      description: "My Second Card",
-      image: {
-        url: "https://cdn.pixabay.com/photo/2020/05/08/16/06/dog-5146351_960_720.jpg",
-        alt: "dog pic",
+        alt: "סופגניות",
       },
       bizNumber: "1000001",
       likes: [],
-      user_id: "621f3f27dde069e62aa3bcab",
+      user_id: "62362f3767d9d9187ad24fab",
     },
     {
-      title: "Third Card",
-      description: "My Third Card",
+      title: "עוגת לב",
+      description: "בטעם בצק שקדים ושוקולד",
       image: {
-        url: "https://cdn.pixabay.com/photo/2022/01/07/07/08/seal-6921267_960_720.jpg",
-        alt: "Seel",
+        url: "http://localhost:3000/assets/images/heartCake.png",
+        alt: "עוגת לב",
       },
       bizNumber: "1000002",
       likes: [],
-      user_id: "621f3f27dde069e62aa3bcab",
+      user_id: "6553a34ee957c7595e08b8a8",
+    },
+    {
+      title: "מקרונים",
+      description: "בטעמים שונים",
+      image: {
+        url: "http://localhost:3000/assets/images/macaroon.png",
+        alt: "מקרונים",
+      },
+      bizNumber: "1000003",
+      likes: [],
+      user_id: "6553a34ee957c7595e08b8a8",
     },
   ],
 };
 
-async function primaryUsers(user) {
-  try {
-    user = new User(user);
-    user.password = generateHashPassword(user.password);
-    await user.save();
-  } catch (error) {
-    console.log(chalk.redBright(error.message));
+async function primaryUsers() {
+  for (const user of data.users) {
+    if (await User.findOne({ email: user.email })) {
+      console.log(`User with email ${user.email} already exists.`);
+      continue;
+    }
+    try {
+      const newUser = new User(user);
+      newUser.password = generateHashPassword(user.password);
+      await newUser.save();
+      console.log(`User ${user.email} added successfully.`);
+    } catch (error) {
+      console.log(chalk.redBright(error.message));
+    }
   }
 }
 
-async function primaryCards(card) {
-  try {
-    card = new Card(card);
-    await card.save();
-  } catch (error) {
-    console.log(chalk.redBright(error.message));
+async function primaryCards() {
+  for (const card of data.cards) {
+    try {
+      const newCard = new Card(card);
+      await newCard.save();
+      console.log(`Card ${card.title} added successfully.`);
+    } catch (error) {
+      console.log(chalk.redBright(error.message));
+    }
   }
 }
 
-const primaryData = () => {
-  for (let i of data.users) {
-    primaryUsers(i);
-  }
-  for (let i of data.cards) {
-    primaryCards(i);
-  }
-};
+async function primaryData() {
+  await primaryUsers();
+  await primaryCards();
+}
 
-module.exports = primaryData;
+primaryData().then(() => console.log("Primary data insertion completed."));
