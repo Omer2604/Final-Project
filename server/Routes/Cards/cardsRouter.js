@@ -8,6 +8,7 @@ const { validateCard } = require("./cardValidation");
 
 router.get("/cards", async (req, res) => {
   try {
+    debugger;
     console.log("Getting all cards...");
     const cards = await Card.find();
     return res.send(cards);

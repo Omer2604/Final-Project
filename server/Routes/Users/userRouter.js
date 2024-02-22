@@ -104,7 +104,6 @@ router.post("/forgotpassword", async (req, res) => {
     console.log("Updating user with new reset token...");
     await user.save();
 
-    // Retrieving the user from the database to confirm the changes
     const updatedUser = await User.findById(user._id);
     console.log("Updated User with new reset token:", updatedUser);
 
@@ -166,7 +165,7 @@ router.post("/reset-password", async (req, res) => {
     }
 
     user.password = generateHashPassword(password);
-    user.resetPasswordToken = undefined; // Clear the resetPasswordToken
+    user.resetPasswordToken = undefined;
     await user.save();
 
     return res.json({
@@ -181,6 +180,11 @@ router.post("/reset-password", async (req, res) => {
       details: error.message,
     });
   }
+});
+
+router.post("/logout", auth, (req, res) => {
+  req.user.token = null;
+  res.json({ message: "Logout successful" });
 });
 
 module.exports = router;
