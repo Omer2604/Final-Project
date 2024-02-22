@@ -23,6 +23,7 @@ class EditCard extends Form {
   async componentDidMount() {
     try {
       const { id } = this.props;
+      console.log("ID before fetching card:", id);
       const { data: card } = await getCard(id);
       this.setState({ isMounted: true, data: this.mapToModel(card) });
     } catch (error) {
@@ -41,13 +42,25 @@ class EditCard extends Form {
 
   doSubmit = async () => {
     try {
+      console.log("Starting doSubmit...");
       const card = { ...this.state.data };
+      console.log("Card before editing:", card);
+
       const { id } = this.props;
+      console.log("Card ID:", id);
       card._id = id;
+
+      console.log("Editing card:", card);
+
       if (!card.url)
         card.url =
           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+
+      console.log("Editing card:", card);
+
       await editCard(card);
+
+      console.log("Card edited successfully");
       toast.success("העריכה בוצעה בהצלחה");
       this.setState({ isCardEdit: true });
     } catch (error) {

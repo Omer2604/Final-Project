@@ -46,7 +46,7 @@ class CreateCard extends Form {
     return (
       <div style={{ minHeight: "85vh" }} className="container-fluid pb-4">
         <div className="container">
-          <PageHeader title="צור קינוח" />
+          <PageHeader title="צור קינוח" subTitle="" />
           <div className="center">
             <form
               style={{
