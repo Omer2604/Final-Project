@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("Joi");
 
 function validateCard(card) {
   const schema = Joi.object({
