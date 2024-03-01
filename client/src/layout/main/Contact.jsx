@@ -138,16 +138,14 @@ class Contact extends Component {
           </div>
         </Form>
         <p className="contactAnother">:מפת הגעה</p>
-        <script async defer>
-          <div
-            className="map"
-            dangerouslySetInnerHTML={{
-              __html: `
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.198923327073!2d34.94811642588956!3d32.090909018735495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d36d223f0be09%3A0x1254457338162c89!2z15DXpNenIDQ0LCDXqNeQ16kg15TXoteZ158!5e0!3m2!1siw!2sil!4v1685137207537!5m2!1siw!2sil" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        `,
-            }}
-          ></div>
-        </script>
+        <div
+          className="map"
+          dangerouslySetInnerHTML={{
+            __html: `
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.198923327073!2d34.94811642588956!3d32.090909018735495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d36d223f0be09%3A0x1254457338162c89!2z15DXpNenIDQ0LCDXqNeQ16kg15TXoteZ158!5e0!3m2!1siw!2sil!4v1685137207537!5m2!1siw!2sil" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    `,
+          }}
+        ></div>
       </React.Fragment>
     );
   }
